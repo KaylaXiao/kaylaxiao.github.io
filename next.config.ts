@@ -1,9 +1,19 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: "export",
-  images: { unoptimized: true },
-  // basePath: "/kaylaxiao.github.io", // 不需要，因为仓库名是 username.github.io
+  output: 'export',
+  trailingSlash: true,
+  images: {
+    unoptimized: true,
+  },
+  /* config options here */
+  webpack: (config) => {
+    config.module.rules.push({
+      test: /\.bib$/,
+      type: 'asset/source',
+    });
+    return config;
+  },
 };
 
 export default nextConfig;

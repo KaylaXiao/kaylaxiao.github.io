@@ -1,36 +1,137 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<div align="center">
+  <img src="./logo.png" alt="PRISM Logo" height="100"/>
+</div>
 
-## Getting Started
+# PRISM
 
-First, run the development server:
+**English** · [中文](README_cn.md) · [Demo](https://prism-demo.pages.dev)  · [Changelog](CHANGELOG.md)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+**If you like this project, please give it a star ⭐️**
+
+PRISM stands for **P**ortfolio & **R**esearch **I**nterface **S**ite **M**aker. It is a modern, configurable, and high-performance personal website template built with Next.js, Tailwind CSS, and TypeScript. It is designed for researchers, developers, and academics to showcase their work, publications, and portfolio with ease.
+
+![PRISM Preview](screenshot.png)
+
+## ✨ Features
+
+*   **📄 Configuration-Driven**: Manage your entire site's content using simple `TOML`, `Markdown`, and `BibTeX` files in the `content/` directory. No code changes required for content updates!
+*   **📚 BibTeX Support**: Directly render your publications from a `.bib` file. Includes search, filtering (Year, Type), and automatic citation generation.
+*   **🎨 Modern Design**: Clean, responsive UI with a beautiful serif/sans-serif typography pairing, smooth animations (Framer Motion), and Dark Mode support.
+*   **⚡️ High Performance**: Built on Next.js 20 with Turbopack. Static export ensures blazing fast load times and easy deployment.
+*   **🔍 SEO Optimized**: Dynamic metadata generation for every page.
+*   **🧩 Dynamic Routing**: Easily add new pages by simply creating a config file.
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+*   Node.js 22 or later
+    *   **Important**: Please download and install Node.js manually from [https://nodejs.org/en/download](https://nodejs.org/en/download).
+    *   Better not to use the pre-installed version on your system, as it may be outdated or incompatible.
+*   npm, pnpm, or yarn
+
+### Installation
+
+1.  **Clone the repository:**
+
+    ```bash
+    git clone https://github.com/xyjoey/PRISM.git
+    cd PRISM
+    ```
+
+2.  **Install dependencies:**
+
+    ```bash
+    npm install
+    ```
+
+3.  **Run the development server:**
+
+    ```bash
+    npm run dev
+    ```
+
+    Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## 🛠️ Configuration
+
+All content lives in the `content/` directory.
+
+### 1. Global Site Config (`content/config.toml`)
+Configure your site title, author details, social links, and navigation menu here.
+
+```toml
+[site]
+title = "Your Name"
+description = "Personal website of Your Name"
+url = "https://your-website.com"
+
+[author]
+name = "Your Name"
+title = "PhD Student / Researcher"
+# ...
+
+[features]
+enable_likes = true
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Homepage (`content/about.toml`)
+Customize the "About" section, "News", and "Selected Publications" on the homepage.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 3. Publications (`content/publications.bib`)
+Export your publications from Google Scholar, Zotero, or Mendeley to `content/publications.bib`. PRISM automatically parses this file to generate your Publications page. Customize the display of publications by changing `selected`, `preview` and `description` keys in the bib file. 
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 4. Adding New Pages
+To add a new page (e.g., "Projects"), create a TOML file in `content/` (e.g., `content/projects.toml`) and add it to the `navigation` list in `content/config.toml`.
 
-## Learn More
+Supported page types:
+*   `text`: Renders Markdown content (Great for CVs, Bio).
+*   `card`: Renders a list of cards (Great for Projects, Awards). Content of each card item supports Markdown.
+*   `publication`: Renders the full publications list with filters.
 
-To learn more about Next.js, take a look at the following resources:
+### 5. I18N Support (`content_<locale>/`)
+PRISM now supports i18n, i.e., multi-language.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+*   Default language lives in `content/`.
+*   Additional languages live in `content_<locale>/` (for example: `content_zh/`, `content_en/`).
+*   Keep the same filenames across directories. Example:
+    *   `content/cv.md` (default)
+    *   `content_zh/cv.md`
+*   If a localized file is missing, PRISM automatically falls back to the default `content/` version.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Configure language behavior in `content/config.toml`:
 
-## Deploy on Vercel
+## 📦 Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+PRISM is optimized for static deployment.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run build
+```
+
+This generates a static `out/` directory that can be hosted anywhere.
+
+👉 **[Read the full Deployment Guide](docs/deployment.md)** for instructions on deploying to **GitHub Pages** and **Cloudflare Pages**.
+
+## 📂 Project Structure
+
+```
+PRISM/
+├── content/              # All user-editable content (TOML, BibTeX, MD)
+├── public/               # Static assets (images, papers)
+├── src/
+│   ├── app/              # Next.js App Router
+│   ├── components/       # React components
+│   ├── lib/              # Utility functions (parsers, config loaders)
+│   └── types/            # TypeScript definitions
+├── next.config.ts        # Next.js configuration
+└── tailwind.config.ts    # Tailwind CSS configuration
+```
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
