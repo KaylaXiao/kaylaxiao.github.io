@@ -1,4 +1,4 @@
-I am a PhD candidate in Economics at University of Ottawa, advised by DR. [Abel Brodeur](https://sites.google.com/site/abelbrodeur/).
+I am a PhD candidate in Economics at University of Ottawa, advised by Dr. [Abel Brodeur](https://sites.google.com/site/abelbrodeur/).
 
 Prior to this, I obtained a B.A. with Honours in Economics from the University of Saskatchewan and an M.Sc. with Distinction in International Economics from the University of Birmingham.
 
