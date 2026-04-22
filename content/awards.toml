@@ -3,6 +3,12 @@ title = "Awards"
 description = "Honors and awards I have received."
 
 [[items]]
+title = "Admission Scholarship"
+subtitle = "University of Ottawa"
+date = "2023"
+content = "Full scholarship awarded upon admission to the PhD program in Economics."
+
+[[items]]
 title = "Fowke Award"
 subtitle = "University of Saskatchewan"
 date = "2019"
