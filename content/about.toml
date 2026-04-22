@@ -3,9 +3,10 @@ title = "About"
 
 [profile]
 research_interests = [
-  "Labor Economics",
-  "Public Economics",
-  "Applied Microeconomics"
+  "Applied Microeconomics",
+  "Labour Economics",
+  "Health Economics",
+  "Public Finance"
 ]
 
 [[sections]]
@@ -26,4 +27,3 @@ id = "news"
 type = "list"
 title = "News"
 source = "news.toml"
-
