@@ -1,42 +1,57 @@
+[site]
+title = "Kayla (Bohan) Xiao"
+description = "PhD Candidate in Economics at the University of Ottawa."
+favicon = "/favicon.svg"
+last_updated = "April 2025"
+
 [author]
-name = "Bohan (Kayla) Xiao"
+name = "Kayla (Bohan) Xiao"
 title = "PhD Candidate in Economics"
 institution = "University of Ottawa"
 avatar = "/bio.jpg"
 
-[contact]
-email = "kaylaxbh@gmail.com"
-phone = "+1 (613) 297-0778"
-address = "Faculty of Social Sciences, University of Ottawa, Ottawa, ON, Canada"
-
 [social]
 email = "kaylaxbh@gmail.com"
+location = "Ottawa, Canada"
+location_url = "https://maps.google.com/maps?q=University+of+Ottawa"
+location_details = [
+  "Faculty of Social Sciences,",
+  "University of Ottawa, Ottawa, ON, Canada"
+]
+google_scholar = ""
 github = "https://github.com/KaylaXiao"
 linkedin = "https://www.linkedin.com/in/bohanx/"
-google_scholar = ""
+
+[features]
+enable_likes = true
+enable_one_page_mode = false
+
+[i18n]
+enabled = false
+locales = ["en"]
+default_locale = "en"
+mode = "fixed"
+fixed_locale = "en"
+persist = false
+switcher = false
+
+[i18n.labels]
+en = "English"
 
 [[navigation]]
-label = "About"
-route = "/"
+title = "About"
 type = "page"
 target = "about"
+href = "/"
 
 [[navigation]]
-label = "Research"
-route = "/publications"
+title = "Research"
 type = "page"
 target = "publications"
+href = "/publications"
 
 [[navigation]]
-label = "CV"
-route = "/cv"
+title = "CV"
 type = "page"
 target = "cv"
-
-[[navigation]]
-label = "Research"
-route = "/publications"
-
-[[navigation]]
-label = "CV"
-route = "/cv"
+href = "/cv"
