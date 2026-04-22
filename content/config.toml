@@ -18,6 +18,20 @@ google_scholar = ""
 [[navigation]]
 label = "About"
 route = "/"
+type = "page"
+target = "about"
+
+[[navigation]]
+label = "Research"
+route = "/publications"
+type = "page"
+target = "publications"
+
+[[navigation]]
+label = "CV"
+route = "/cv"
+type = "page"
+target = "cv"
 
 [[navigation]]
 label = "Research"
