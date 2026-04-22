@@ -1,3 +1,10 @@
+
+> 📄 **[Download CV (PDF)](https://drive.google.com/file/d/1PK6bTBT15WYkx3mb5URGSUWH6QoTpT5t/view?usp=sharing)** — Last updated April 2026
+
+---
+
+# Curriculum Vitae
+
 ## Education
 
 **The University of Example**, PhD in Natural Science, *2025 - Present*
